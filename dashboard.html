@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aerospace Supply Chain | Operations Dashboard</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f5f7fa;color:#172536;margin:0}header{background:#111;padding:24px;color:white}
+main{max-width:1050px;margin:32px auto;padding:0 20px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card,section{background:white;border:1px solid #dce2e9;border-radius:10px;padding:22px;margin-bottom:22px}
+.card strong{font-size:30px;display:block;margin-top:8px}table{border-collapse:collapse;width:100%}td,th{text-align:left;padding:12px;border-bottom:1px solid #e4e8ed}
+th{background:#f0f3f7}button{background:#111;color:white;padding:9px 14px;border:0;border-radius:5px;cursor:pointer}
+small{color:#64748b}input{padding:10px;margin:5px;border:1px solid #ccd4dc;border-radius:5px}
+@media(max-width:650px){.cards{grid-template-columns:1fr}table{font-size:12px}}
+</style></head><body><header><h1>Aerospace Supply Chain Verification</h1><p>Local prototype | Operations and audit dashboard</p></header>
+<main><div class="cards"><div class="card">Orders<strong id="count">—</strong></div><div class="card">Verified<strong id="verified">—</strong></div><div class="card">Order Value<strong id="value">—</strong></div></div>
+<section><h2>Create Purchase Order</h2><form id="newOrder">
+<input name="supplier" placeholder="Supplier" required><input name="part" placeholder="Part number" required>
+<input name="quantity" type="number" min="1" placeholder="Quantity" required>
+<input name="unit_cost" type="number" min="0" step="0.01" placeholder="Unit cost" required>
+<button>Create Order</button></form><p id="notice" role="status"></p></section>
+<section><h2>Orders and Verification</h2><table><thead><tr><th>ID</th><th>Supplier</th><th>Part</th><th>Value</th><th>Status</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table></section>
+<small>Demonstration with sample data. SHA-256 event hashes are stored locally; no live blockchain or ERP connection.</small></main>
+<script>
+const api=async(path,method='GET',data)=>{const response=await fetch(path,{method,headers:{'Content-Type':'application/json'},body:data?JSON.stringify(data):undefined});const value=await response.json();if(!response.ok)throw Error(value.error||'Request failed');return value};
+const money=n=>new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD'}).format(n);
+async function refresh(){const [items,metrics]=await Promise.all([api('/api/orders'),api('/api/metrics')]);document.getElementById('count').textContent=metrics.count;document.getElementById('verified').textContent=metrics.verified;document.getElementById('value').textContent=money(metrics.value);const body=document.getElementById('rows');body.replaceChildren();for(const item of items){const tr=document.createElement('tr');for(const field of [item.id,item.supplier,item.part,money(item.total),item.status]){const td=document.createElement('td');td.textContent=field;tr.append(td)}const td=document.createElement('td');const action={created:'approve',approved:'deliver',delivered:'verify'}[item.status];if(action){const btn=document.createElement('button');btn.textContent=action;btn.onclick=async()=>{try{await api('/api/orders/'+item.id+'/'+action,'POST',{actor:'demo-operator'});await refresh()}catch(e){alert(e.message)}};td.append(btn)}else{const btn=document.createElement('button');btn.textContent='Audit';btn.onclick=async()=>{const result=await api('/api/orders/'+item.id+'/verify');alert(JSON.stringify(result))};td.append(btn)}tr.append(td);body.append(tr)}}
+document.getElementById('newOrder').onsubmit=async e=>{e.preventDefault();const data=Object.fromEntries(new FormData(e.target));try{await api('/api/orders','POST',data);e.target.reset();document.getElementById('notice').textContent='Order created';await refresh()}catch(err){document.getElementById('notice').textContent=err.message}};
+refresh().catch(err=>document.getElementById('notice').textContent=err.message);
+</script></body></html>
