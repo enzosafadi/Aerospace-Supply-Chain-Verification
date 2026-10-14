@@ -166,4 +166,4 @@ if __name__ == "__main__":
         ]:
             create_order(dict(supplier=supplier, part=part, quantity=qty, unit_cost=price))
     print("Open http://localhost:8000")
-    ThreadingHTTPServer(("127.0.0.1", 8000), API).serve_forever()
+   ThreadingHTTPServer(("0.0.0.0", int(__import__("os").environ.get("PORT", 10000))), API).serve_forever()
