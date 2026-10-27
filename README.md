@@ -7,7 +7,27 @@
 The Aerospace Supply Chain Verification System tracks purchase orders through approval, delivery, and verification. It combines a browser-based operations dashboard, a Python REST API, SQLite persistence, and a SHA-256 chained event history to demonstrate auditable supply chain processing.
 
 **Portfolio Demonstration · Synthetic Data Only**  
-**Project Date: June 2022 · Version: 1.0**
+**Version: 1.1 · Portfolio refresh: 27 October 2026**
+
+Legacy scenario label: June 2022; this is not a claim of a verified development date.
+
+## Project documents
+
+- [Business case](Business-Case.md) — why this project, options, beneficiaries and evaluation.
+- [Project presentation](docs/Project-Presentation.md) — the complete walkthrough and management use.
+- [Workflow and architecture](docs/Workflow-And-Architecture.md) — flowcharts, components and integrity limits.
+- [User guide](docs/User-Guide.md) — Windows setup and demonstration walkthrough.
+- [Validation record](docs/Validation.md) — checks actually performed.
+- [LinkedIn and Upwork upload kit](docs/Upload-Kit.md) — ready-to-use fields and image order.
+- [Portfolio standard](Portfolio-Standard.md) — common requirements for future projects.
+
+## Portfolio cover and application evidence
+
+![Aerospace portfolio cover](assets/thumbnails/SS0_Aerospace_Thumbnail.jpg)
+
+The cover is an editorial illustration, not an application screenshot. Authentic SS1–SS3 captures are pending: this review environment could not launch a local browser or access the local app through the cloud browser. The optional capture script below produces them from the running application when a local browser is available. No mockup is presented as a screenshot.
+
+See [validation evidence](docs/Validation.md) and [process diagrams](docs/Workflow-And-Architecture.md).
 
 ---
 
@@ -114,8 +134,8 @@ The verification function recalculates every hash and confirms that each event r
 ### 1. Clone the Repository
 
 ```powershell
-git clone https://github.com/enzosafadi/aerospace-supply-chain-verification.git
-cd aerospace-supply-chain-verification
+git clone https://github.com/enzosafadi/Aerospace-Supply-Chain-Verification.git
+cd Aerospace-Supply-Chain-Verification
 ```
 
 ### 2. Run the Application
@@ -125,6 +145,8 @@ The project requires Python 3.9 or later and uses only the Python standard libra
 ```powershell
 python app.py
 ```
+
+The default port is 8000; a PORT environment variable overrides it.
 
 ### 3. Open the Dashboard
 
@@ -177,6 +199,9 @@ aerospace-supply-chain-verification/
 
 - All suppliers, components, purchase orders, and values are synthetic.
 - The SHA-256 chain is stored locally and is not a blockchain.
+- Only event fields are hashed; supplier, part, quantity and unit cost are not covered by this event chain.
+- Local database access can allow chain rewriting or deletion of trailing events; there is no independent integrity checkpoint.
+- Verified is a workflow status, distinct from chain validity and component certification. Actor labels are not authenticated identities.
 - The prototype does not connect to SAP, Oracle, SQL Server, Hedera, or another external platform.
 - SQLite supports the local demonstration but is not configured as a distributed production database.
 - Authentication, authorization, role-based access, and enterprise identity integration are not implemented.
@@ -200,4 +225,5 @@ This repository demonstrates how aerospace procurement events can be organized i
 
 ---
 
-**Version 1.0 · June 2022 · Portfolio Demonstration**
+**Version 1.1 · Portfolio Demonstration · Synthetic Data**
+

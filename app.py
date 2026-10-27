@@ -165,5 +165,7 @@ if __name__ == "__main__":
             ("Summit Aerospace", "BRK-105", 30, 185.75),
         ]:
             create_order(dict(supplier=supplier, part=part, quantity=qty, unit_cost=price))
-    print("Open http://localhost:8000")
-    ThreadingHTTPServer(("0.0.0.0", int(__import__("os").environ.get("PORT", 10000))), API).serve_forever()
+    port = int(__import__("os").environ.get("PORT", 8000))
+    print(f"Open http://localhost:{port}")
+    ThreadingHTTPServer(("0.0.0.0", port), API).serve_forever()
+
