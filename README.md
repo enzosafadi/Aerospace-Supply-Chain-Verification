@@ -18,13 +18,12 @@ Legacy scenario label: June 2022; this is not a claim of a verified development 
 - [Workflow and architecture](docs/Workflow-And-Architecture.md) — flowcharts, components and integrity limits.
 - [User guide](docs/User-Guide.md) — Windows setup and demonstration walkthrough.
 - [Validation record](docs/Validation.md) — checks actually performed.
-- [Portfolio standard](Portfolio-Standard.md) — common requirements for future projects.
 
 ## Portfolio cover and application evidence
 
 ![Aerospace portfolio cover](assets/thumbnails/SS0_Aerospace_Thumbnail.jpg)
 
-The cover is an editorial illustration, not an application screenshot. Authentic SS1–SS3 captures are pending: this review environment could not launch a local browser or access the local app through the cloud browser. The optional capture script below produces them from the running application when a local browser is available. No mockup is presented as a screenshot.
+The cover is an editorial illustration. Application screenshots are not included in this release. The optional screenshot capture script is documented in the user guide.
 
 See [validation evidence](docs/Validation.md) and [process diagrams](docs/Workflow-And-Architecture.md).
 

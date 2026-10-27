@@ -23,6 +23,6 @@ The startup default was corrected from port 10000 to 8000 so the quick start mat
 
 A temporary local HTTP server returned the three seed orders and CA$25,478.50 total value. Requests advanced order 1 through approval, delivery and verification; order 2 was approved. The metrics returned one verified order and the audit endpoint returned `{"valid": true, "events": 4}`.
 
-## Screenshot limitation
+## Screenshot coverage
 
-Fresh SS1–SS3 screenshots were not obtained. The local Playwright browser executable was unavailable, its official download did not return a valid archive, and the cloud browser could not access the local service. The package does not contain invented screenshots. The optional `tools/Capture-Screenshots.cjs` script captures the running application when Playwright and Chromium are available.
+Application screenshots are not included in this release. The optional `tools/Capture-Screenshots.cjs` script captures the demonstration when Playwright and Chromium are installed locally. Automated test results above do not establish browser visual coverage.

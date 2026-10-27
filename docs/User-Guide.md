@@ -4,7 +4,7 @@
 
 Requires Python 3.9 or later. No third-party Python packages are needed.
 
-Extract the project folder into `C:\Users\enzos\OneDrive\Documents`. Open a terminal in the extracted `Aerospace-Supply-Chain-Verification` folder, then run:
+Extract the project folder to a directory of your choice. Open a terminal in the extracted `Aerospace-Supply-Chain-Verification` folder, then run:
 
 ```powershell
 python app.py
@@ -46,10 +46,6 @@ Stop the server. If you want to discard all local demonstration changes, delete 
 ## Operating limits
 
 Use synthetic data only. The application has no login or permissions, and its server binds to all interfaces. It is intended for a trusted local demonstration, not exposed internet hosting. There are no live supplier, ERP, blockchain or payment connections.
-
-## Files for portfolio uploads
-
-Use the thumbnail in `assets/thumbnails`, followed by SS1–SS3 once captured in `assets/screenshots`. These images show a demonstration; they do not represent real company results.
 
 ## Optional screenshot capture
 
