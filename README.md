@@ -225,3 +225,8 @@ This repository demonstrates how aerospace procurement events can be organized i
 
 **Version 1.1 · Portfolio Demonstration · Synthetic Data**
 
+## Who it benefits
+
+Aerospace purchasing teams, suppliers, quality reviewers and operations managers: a shared view of purchase-order progress and a reviewable event history.
+
+These are intended users and benefits, not evidence of adoption or measured customer outcomes.
