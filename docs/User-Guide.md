@@ -49,7 +49,7 @@ Use synthetic data only. The application has no login or permissions, and its se
 
 ## Files for portfolio uploads
 
-Use the thumbnail in `assets/thumbnails`, followed by SS1–SS3 once captured in `assets/screenshots`. Copy the prepared text from [Upload Kit](Upload-Kit.md). These images show a demonstration; they do not represent real company results.
+Use the thumbnail in `assets/thumbnails`, followed by SS1–SS3 once captured in `assets/screenshots`. These images show a demonstration; they do not represent real company results.
 
 ## Optional screenshot capture
 

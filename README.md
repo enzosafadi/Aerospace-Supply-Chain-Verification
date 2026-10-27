@@ -18,7 +18,6 @@ Legacy scenario label: June 2022; this is not a claim of a verified development 
 - [Workflow and architecture](docs/Workflow-And-Architecture.md) — flowcharts, components and integrity limits.
 - [User guide](docs/User-Guide.md) — Windows setup and demonstration walkthrough.
 - [Validation record](docs/Validation.md) — checks actually performed.
-- [LinkedIn and Upwork upload kit](docs/Upload-Kit.md) — ready-to-use fields and image order.
 - [Portfolio standard](Portfolio-Standard.md) — common requirements for future projects.
 
 ## Portfolio cover and application evidence
