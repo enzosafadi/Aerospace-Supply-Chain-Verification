@@ -1,5 +1,10 @@
 # Aerospace Supply Chain Verification System
 
+## Project roadmap — concept to sale
+
+![Aerospace-Supply-Chain-Verification roadmap with navy current-position line](docs/project-roadmap.svg)
+
+
 ## Purchase Order Traceability & Transaction Verification
 
 **A portfolio prototype for traceable aerospace procurement workflows, operational oversight, and tamper detection.**
