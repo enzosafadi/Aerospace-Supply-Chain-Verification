@@ -235,3 +235,7 @@ This repository demonstrates how aerospace procurement events can be organized i
 Aerospace purchasing teams, suppliers, quality reviewers and operations managers: a shared view of purchase-order progress and a reviewable event history.
 
 These are intended users and benefits, not evidence of adoption or measured customer outcomes.
+
+## Repository verification
+
+[Current scoped verification results](VERIFICATION.md). Run `python tools/verify_repository.py --visibility public`.

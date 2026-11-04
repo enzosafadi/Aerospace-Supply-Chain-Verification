@@ -1,0 +1,13 @@
+{
+  "visibility": "public",
+  "test_commands": [
+    [
+      "{python}",
+      "-m",
+      "unittest",
+      "-v",
+      "test_app"
+    ]
+  ],
+  "scope": "Executable local tests"
+}
